@@ -6,9 +6,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Travel Tracker</title>
   <link rel="stylesheet" href="./styles/main.css">
+  
 </head>
 
 <body>
+  
   <form class="tab-view tab-view-height-auto" action="/user" method="post">
     <% users.forEach(function(user) { %>
       <input type="submit" name="user" value="<%= user.id %>" id="<%= user.id %>">
@@ -18,8 +20,12 @@
     <% }); %>
 
     <input type="submit" name="add" value="new" id="tab">
-    <label for="tab">Add Family Member</label>
+    <label for="tab">Add Family Member ✚</label>
   </form>
+ 
+
+
+  
 
   <form action="/add" method="post">
     <input list="countries" name="country" autofocus placeholder="<%= locals.error ? error : 'Enter country name' %>" required />
@@ -31,6 +37,34 @@
     <button type="submit" style="background-color: <%= color %>;">Add</button>
     
   </form>
+   <!-- Delete User Dropdown Form -->
+<!-- Delete User Dropdown Form aligned to right -->
+<!-- Improved Delete User UI - Right aligned, no top gap -->
+<!-- Clean, tight, theme-matching Delete User UI -->
+<!-- Compact, flush Delete User UI -->
+<div style="display: flex; justify-content: flex-end; margin-top: -3rem; margin-bottom: 0.5rem;">
+  <form action="/delete-user" method="post"
+        onsubmit="return confirm('Are you sure you want to delete this user?');"
+        style="display: flex; align-items: center; gap: 0.3rem; padding: 0.2rem 0.5rem; background-color: #1e1e1e; border-radius: 6px; font-size: 0.85rem;">
+
+    <label for="deleteUser" style="color: #ccc;">Delete a user :</label>
+
+    <select name="userId" id="deleteUser"
+            style="padding: 0.2rem 0.4rem; border-radius: 4px; background-color: #101010; color: #eee; border: 1px solid #333; font-size: 0.85rem;">
+      <% users.forEach(function(user) { %>
+        <option value="<%= user.id %>"><%= user.name %></option>
+      <% }); %>
+    </select>
+
+    <button type="submit"
+            style="background-color: #b71c1c; color: white; border: none; padding: 0.2rem 0.2rem; border-radius: 2px;">
+      DELETE
+    </button>
+  </form>
+</div>
+
+
+
 
   
  <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 2rem; padding: 2rem;">
@@ -414,12 +448,11 @@
         ⨯
       </button>
     </form>
+    
   </li>
 <% }); %>
-
     </ul>
   </section>
-
 </div>
 
 
