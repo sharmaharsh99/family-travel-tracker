@@ -9,15 +9,19 @@ const app = express();
 const port = process.env.PORT || 3000;
 
 const db = new pg.Client({
- connectionString: process.env.DATABASE_URL,
-  ssl: process.env.DATABASE_URL.includes("railway.app") || process.env.DATABASE_URL.includes("supabase") ? { rejectUnauthorized: false } : false
+  user: process.env.DB_USER,
+  host: process.env.DB_HOST,
+  database: process.env.DB_NAME,
+  password: process.env.DB_PASSWORD,
+  port: process.env.DB_PORT,
+  ssl: { rejectUnauthorized: false }
 });
+
 db.connect();
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
-app.set("view engine", "ejs");
-app.set("views", "./views");
+
 
 app.use(session({
   secret: "travel-tracker-secret",
