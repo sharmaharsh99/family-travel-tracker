@@ -35,7 +35,36 @@
         <option value="<%= c.country_name %>"></option>
       <% }); %>
     </datalist>
-    <button type="submit" style= "  color: #101010; background-color: <%= color %>;">Add</button>
+    <button 
+  type="submit" 
+  style="
+    background: rgba(255, 255, 255, 0.1);
+    color: <%= color %>;
+    border: 2px solid <%= color %>;
+    padding: 0.5rem 1.3rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  "
+  onmouseover="
+    this.style.background='rgba(255,255,255,0.2)';
+    this.style.transform='scale(1.05)';
+    this.style.boxShadow='0 6px 18px rgba(0, 0, 0, 0.15)';
+  "
+  onmouseout="
+    this.style.background='rgba(255,255,255,0.1)';
+    this.style.transform='scale(1)';
+    this.style.boxShadow='0 4px 12px rgba(0, 0, 0, 0.1)';
+  "
+>
+  Add
+</button>
+
     
   </form>
    <!-- Delete User Dropdown Form -->
