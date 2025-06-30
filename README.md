@@ -39,6 +39,7 @@ The **Family Travel Tracker** is a full-stack web application that helps you vis
 ---
 
 🔮 Future Enhancements
+
 👥 Add user authentication
 
 📆 Add timestamps for each visit
@@ -49,10 +50,14 @@ The **Family Travel Tracker** is a full-stack web application that helps you vis
 
 🌍 Dark mode or custom map styles
 
+---
+
 👤 Author
 Harsh Sharma
 🎓 B.Tech ECE, Delhi Technological University
 📫 [LinkedIn](https://www.linkedin.com/in/harsh-sharma-b26098257/)
+
+---
 
 📝 License
 This project is licensed under the MIT License — feel free to use and modify!
